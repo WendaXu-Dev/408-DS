@@ -1,16 +1,16 @@
 {
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "C/C++: clang build active file",
-            "command": "/usr/bin/clang++",
+            "type": "shell",
+            "label": "C/C++: clang++ build active file",
+            "command": "mkdir -p '${fileDirname}/build' && /usr/bin/clang++",
             "args": [
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "$({fileDirname}/build/$){fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "${fileDirname}"
